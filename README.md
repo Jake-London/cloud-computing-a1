@@ -7,23 +7,23 @@ Python Modules
  - datetime
  - sys
 
-Part 1: awsS3Shell.py Program
+## Part 1: awsS3Shell.py Program - Mimic Unix Shell "cd" Command with python script and AWS S3 buckets
 
-Basic Commands and Flags NOT Handled
-
-NONE
-
-Extra Commands or Flags
+### Basic Commands and Flags NOT Handled
 
 NONE
 
-Error Conditions
+### Extra Commands or Flags
+
+NONE
+
+### Error Conditions
  - Most error conditions are handled such that nothing happens or a message is given and a new prompt is given,
    but does not terminate the prompt
    (example: using commands before logging in does nothing and returns a new prompt)
  - If 'config.ini' is not present, program will terminate
 
-Comments/Instructions for the Marker
+### Comments/Instructions for the Marker
  - First time using python so code is messy as I learnt as I went
  - IMPORTANT - When using commands that specify an s3 path (either total or relative),
    please avoid adding a '/' to the end of a specified path as certain commands will not work properly
@@ -33,9 +33,9 @@ Comments/Instructions for the Marker
 
 -------------------------------------------------------------------
 
-Part 2: DynamoDB
+## Part 2: DynamoDB - Automatically upload .csv data to DynamoDB (loadTable.py), Query DynamoDB for relevant information (queryOECD.py)
 
-loadTable.py Program
+### loadTable.py Program
  - Primary Key:
 	Partition Key named 'PartitionKey' in table is combination of Commodity + Variable in the form 'commoditycode-variable'
 	(example: WT-IM for Wheat Import
@@ -52,11 +52,11 @@ loadTable.py Program
  - if no: program that does and how it is run
 	- queryOECD.py - script reads it to local storage each time program runs (not put in DynamoDB)
 
-queryOECD.py Program
+### queryOECD.py Program
  - Running this program:
  - encodings table read in by this program: encodings.csv is read from folder script is in
 
-Error Conditions:
+### Error Conditions:
  - If encodings.csv is missing, message is printed and program ends
  - similarily if tablename or filename is invalid, message prints and program ends
 
